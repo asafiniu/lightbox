@@ -1,0 +1,4 @@
+body{}
+body div#images p.message{display:none}
+body div#images.empty p.message#empty,
+body div#images.loading p.message#loading{display:none}
