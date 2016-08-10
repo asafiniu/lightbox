@@ -1,0 +1,43 @@
+a{
+color:#000;
+cursor:pointer;
+text-decoration:none!important;
+}
+div.modal-wrapper{
+position:absolute;
+background:rgba(0,0,0,0.8);
+top:0;
+width:100%;
+left:0;
+min-height:100%;
+}
+div.modal-wrapper div.modal-content{
+margin:5% auto 10%;
+height:100%;
+background:#fff;
+width:80%
+}
+/* TODO:custom classes - div.modal-wrapper div.modal-content.???{}*/
+div.modal-wrapper div.modal-content div#header{
+text-align:right;
+padding:15px 20px
+}
+div.modal-wrapper div.modal-content div#header a#close{
+position:relative;
+right:10px;
+}
+div.modal-wrapper div.modal-content div#header div#title{text-align:center}
+div.modal-wrapper div.modal-content hr{
+width:80%;
+text-align:center;
+}
+div.modal-wrapper div.modal-content div#body{text-align:center}
+div.modal-wrapper div.modal-content div#body img#modalimage{
+max-height:75%;
+max-width:90%;
+}
+div.modal-wrapper div.modal-content div#footer{
+text-align:center;
+margin:10px 0 30px
+}
+div.modal-wrapper div.modal-content div#footer div#prevnext a{margin-right:10px}

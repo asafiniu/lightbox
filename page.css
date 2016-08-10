@@ -1,4 +1,36 @@
 body{}
 body div#images p.message{display:none}
 body div#images.empty p.message#empty,
-body div#images.loading p.message#loading{display:none}
+body div#images.loading p.message#loading{display:block}
+body div#error{
+color:red;
+text-align:center
+}
+body div#error a{
+color:blue;
+}
+
+
+/*image slider*/
+.thumbnail-frame{
+display:inline-block;
+margin:5px;
+width:150px;
+height:150px;
+vertical-align:top;
+opacity:0.8;
+}
+.thumbnail-frame img{
+vertical-align:middle;
+}
+.thumbnail-frame:hover{
+box-shadow:1px 1px 10px #000;
+cursor:pointer;
+opacity:1;
+}
+.thumbnail-frame:active{
+box-shadow:none;
+}
+.thumbnail-frame:active img{
+zoom:98%;
+}
