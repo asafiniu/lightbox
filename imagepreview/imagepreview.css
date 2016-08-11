@@ -17,7 +17,9 @@ height:100%;
 background:#fff;
 width:80%
 }
-/* TODO:custom classes - div.modal-wrapper div.modal-content.???{}*/
+div.modal-wrapper div.modal-content div#footer div#prevNext a{visibility:hidden}
+div.modal-wrapper div.modal-content.hasPrev div#footer div#prevNext a#prev,
+div.modal-wrapper div.modal-content.hasNext div#footer div#prevNext a#next{visibility:visible}
 div.modal-wrapper div.modal-content div#header{
 text-align:right;
 padding:15px 20px

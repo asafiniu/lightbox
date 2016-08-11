@@ -63,8 +63,18 @@
                     src:this.getElementsByTagName('img')[0].getAttribute('original-src'),
                     thumbnail:this,
                     cssClass:"image-preview",
-                    afterOpen:function(){},
-                    afterClose:function(){}
+                    beforeOpen:function(modal){
+                        console.log("about to open.");
+                    },
+                    afterOpen:function(modal){
+                        console.log("open.");
+                    },
+                    beforeClose:function(modal){
+                        console.log("about to close.");
+                    },
+                    afterClose:function(modal){
+                        console.log("closed.");
+                    }
                 });
             };
             slider.appendChild(frame);

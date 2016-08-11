@@ -25,6 +25,7 @@ ImagePreview = (function(){
     };
 
     var setPrevNext = function(){
+        _options.cssClass = _options.cssClass.replace(/hasPrev|hasNext/g, "");
         var prev = _options.thumbnail.previousSibling;
         var prevImg = prev && prev.getElementsByTagName && prev.getElementsByTagName("img");
         if ( prev && prevImg && prevImg.length ) {
@@ -50,7 +51,15 @@ ImagePreview = (function(){
         }
 
         if ( _wrapper ) {
-            _wrapper.getElementsByTagName("div")[0].className = _options.cssClass;
+            var content = _wrapper.getElementsByTagName("div")[0];
+            content.className = "modal-content " + _options.cssClass;
+            var prevNext = content.find("prevnext");
+            if ( _options.next ) {
+                prevNext.find("next").onclick = _options.next;
+            }
+            if ( _options.prev ) {
+                prevNext.find("prev").onclick = _options.prev;
+            }
         }
     };
 
@@ -58,7 +67,11 @@ ImagePreview = (function(){
         var wrapper = document.createElement("div");
         wrapper.id = _modalId;
         wrapper.className = "modal-wrapper";
-        wrapper.onclick = ImagePreview.close;
+        wrapper.onclick = function(e){
+            if ( null !== e.target.className.match(/modal-wrapper/) ) {
+                ImagePreview.close();
+            }
+        };
         var content = document.createElement("div");
         content.id = "content";
         content.className = "modal-content " + _options.cssClass;
@@ -114,7 +127,7 @@ ImagePreview = (function(){
             var prevNext = document.createElement("div");
             prevNext.id = "prevnext";
             var prevLink = document.createElement("a");
-            nextLink.id = "prev";
+            prevLink.id = "prev";
             prevLink.innerText = "<";
             prevLink.href = "javascript:void(0);";
             if ( _options.prev ){
