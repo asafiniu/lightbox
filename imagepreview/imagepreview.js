@@ -9,6 +9,8 @@ ImagePreview = (function(){
     var _options = {
         src:"",
         thumbnail:null,
+        width:"",
+        height:"",
         cssClass:"",
         beforeOpen:function(){
             /* right before it's visible on screen */
@@ -93,7 +95,7 @@ ImagePreview = (function(){
             var a = document.createElement("a");
             a.href = _options.src;
             a.target = "_blank";
-            a.innerText = "Open image in a new tab";
+            a.innerText = _options.title + ">"; // TODO: better display?
             title.appendChild(a);
             header.appendChild(title);
 

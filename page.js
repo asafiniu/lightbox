@@ -54,13 +54,21 @@
             var frame = document.createElement("div");
             var thumb = document.createElement("img");
             frame.className = "thumbnail-frame";
+            // TODO generalize image interface. These lines are too "familiar" with Google
+            thumb.alt = thumbnails[i].title;
             thumb.src = thumbnails[i].image.thumbnailLink;
             thumb.setAttribute('original-src', thumbnails[i].link);
+            thumb.setAttribute('original-w', thumbnails[i].image.width);
+            thumb.setAttribute('original-h', thumbnails[i].image.height);
             preloadImage(thumbnails[i].link);
             frame.appendChild(thumb);
             frame.onclick = function(e){
+                var img = this.getElementsByTagName('img')[0];
                 ImagePreview.open({
-                    src:this.getElementsByTagName('img')[0].getAttribute('original-src'),
+                    title:img.alt,
+                    src:img.getAttribute('original-src'),
+                    width:img.getAttribute('original-w'),
+                    height:img.getAttribute('original-h'),
                     thumbnail:this,
                     cssClass:"image-preview",
                     beforeOpen:function(modal){

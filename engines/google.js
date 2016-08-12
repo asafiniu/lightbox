@@ -2,84 +2,203 @@ GoogleSearchEngine = function(cx, apiKey){
     // Search through Google using a Custom Search Engine and an API key
 
     var _example = {
- "kind": "customsearch#search",
- "url": {
-  "type": "application/json",
-  "template": "https://www.googleapis.com/customsearch/v1?q={searchTerms}&num={count?}&start={startIndex?}&lr={language?}&safe={safe?}&cx={cx?}&cref={cref?}&sort={sort?}&filter={filter?}&gl={gl?}&cr={cr?}&googlehost={googleHost?}&c2coff={disableCnTwTranslation?}&hq={hq?}&hl={hl?}&siteSearch={siteSearch?}&siteSearchFilter={siteSearchFilter?}&exactTerms={exactTerms?}&excludeTerms={excludeTerms?}&linkSite={linkSite?}&orTerms={orTerms?}&relatedSite={relatedSite?}&dateRestrict={dateRestrict?}&lowRange={lowRange?}&highRange={highRange?}&searchType={searchType}&fileType={fileType?}&rights={rights?}&imgSize={imgSize?}&imgType={imgType?}&imgColorType={imgColorType?}&imgDominantColor={imgDominantColor?}&alt=json"
- },
- "queries": {
-  "request": [
-   {
-    "title": "Google Custom Search - flower",
-    "totalResults": "2",
-    "searchTerms": "flower",
-    "count": 2,
-    "startIndex": 1,
-    "inputEncoding": "utf8",
-    "outputEncoding": "utf8",
-    "safe": "off",
-    "cx": "006788635243508668146:f0e7orztwgs",
-    "searchType": "image"
-   }
-  ]
- },
- "context": {
-  "title": "asaf's search engine"
- },
- "searchInformation": {
-  "searchTime": 0.830175,
-  "formattedSearchTime": "0.83",
-  "totalResults": "2",
-  "formattedTotalResults": "2"
- },
- "items": [
-  {
-   "kind": "customsearch#result",
-   "title": "Free Stock Photo: Spring Flowers - The Shutterstock Blog",
-   "htmlTitle": "Free Stock Photo: Spring <b>Flowers</b> - The Shutterstock Blog",
-   "link": "http://www.shutterstock.com/blog/wp-content/uploads/sites/5/2010/05/free_flowers_shutterstock_13325443_web.jpg",
-   "displayLink": "www.shutterstock.com",
-   "snippet": "... Photo: Spring Flowers",
-   "htmlSnippet": "... Photo: Spring <b>Flowers</b>",
-   "mime": "image/jpeg",
-   "image": {
-    "contextLink": "http://www.shutterstock.com/blog/2010/05/free-stock-photo-spring-flowers/",
-    "height": 452,
-    "width": 714,
-    "byteSize": 153696,
-    "thumbnailLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnK38J6gmaQw_-mjVIbCOhFL84ZGDK-EKX5bQdNx-tdglcE8TshvniWMpD",
-    "thumbnailHeight": 89,
-    "thumbnailWidth": 140
-   }
-  },
-  {
-   "kind": "customsearch#result",
-   "title": "Drop Dead Gorgeous: 8 of the World's Most Poisonous Flowers - The ...",
-   "htmlTitle": "Drop Dead Gorgeous: 8 of the World&#39;s Most Poisonous <b>Flowers</b> - The ...",
-   "link": "http://www.shutterstock.com/blog/wp-content/uploads/sites/5/2015/04/flowers.jpg",
-   "displayLink": "www.shutterstock.com",
-   "snippet": "flowers",
-   "htmlSnippet": "<b>flowers</b>",
-   "mime": "image/jpeg",
-   "image": {
-    "contextLink": "http://www.shutterstock.com/blog/drop-dead-gorgeous-8-of-the-worlds-most-poisonous-flowers",
-    "height": 281,
-    "width": 750,
-    "byteSize": 213232,
-    "thumbnailLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVcRV1KaRrQXyVJHufLrF25PnjkpbxSqnuH1OU88yXIiXXvaeDIl6YAzlq",
-    "thumbnailHeight": 53,
-    "thumbnailWidth": 141
-   }
-  }
- ]
-};
+        items: [{
+            "kind": "customsearch#result",
+            "title": "Do more faster: 4 ferramentas que irão ajudar a sua produtividade ...",
+            "htmlTitle": "Do more faster: 4 ferramentas que irão ajudar a sua produtividade ...",
+            "link": "http://www.shutterstock.com/pt/blog/wp-content/uploads/sites/4/2015/01/img2.png",
+            "displayLink": "www.shutterstock.com",
+            "snippet": "O Slack é um aplicativo que ...",
+            "htmlSnippet": "O <b>Slack</b> é um aplicativo que ...",
+            "mime": "image/png",
+            "fileFormat": "Image Document",
+            "image": {
+                "contextLink": "http://www.shutterstock.com/pt/blog/do-more-faster-4-ferramentas-que-iro-ajudar-a-sua-produtividade",
+                "height": 351,
+                "width": 1000,
+                "byteSize": 130982,
+                "thumbnailLink": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS8j94VmDFQDZUoc7M3rkyv4X216LsVebm2w5l_R4y44kfK7Le28h0ZrRg",
+                "thumbnailHeight": 52,
+                "thumbnailWidth": 149
+            }
+        },
+        {
+            "kind": "customsearch#result",
+            "title": "Do more faster: 4 ferramentas que irão ajudar a sua produtividade ...",
+            "htmlTitle": "Do more faster: 4 ferramentas que irão ajudar a sua produtividade ...",
+            "link": "http://www.shutterstock.com/pt/blog/wp-content/uploads/sites/4/2015/01/img7.jpg",
+            "displayLink": "www.shutterstock.com",
+            "snippet": "... do Slack na cultura da ...",
+            "htmlSnippet": "... do <b>Slack</b> na cultura da ...",
+            "mime": "image/jpeg",
+            "image": {
+                "contextLink": "http://www.shutterstock.com/pt/blog/do-more-faster-4-ferramentas-que-iro-ajudar-a-sua-produtividade",
+                "height": 551,
+                "width": 1000,
+                "byteSize": 301635,
+                "thumbnailLink": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSxrI6nEMWKZhZUq0wEa0RoTPHT8v_5Z5yVK69qPscMYD_U7YVEii1bu_k",
+                "thumbnailHeight": 82,
+                "thumbnailWidth": 149
+            }
+        },
+        {
+            "kind": "customsearch#result",
+            "title": "How Ad Agency Life Has Changed from the Golden Age to the Digital ...",
+            "htmlTitle": "How Ad Agency Life Has Changed from the Golden Age to the Digital ...",
+            "link": "http://www.shutterstock.com/blog/wp-content/uploads/sites/5/2016/07/mad-men-design-3.jpg",
+            "displayLink": "www.shutterstock.com",
+            "snippet": "mad-men-design-3. “",
+            "htmlSnippet": "mad-men-design-3. “",
+            "mime": "image/jpeg",
+            "image": {
+                "contextLink": "http://www.shutterstock.com/blog/ad-agency-life-changed-golden-age-digital-age",
+                "height": 2711,
+                "width": 2880,
+                "byteSize": 1289418,
+                "thumbnailLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJfXXIsvwIitVIi61Gv9vk91_fFH9VocGVQKCmtqgBUYsE1Ntn90X5zcHJ",
+                "thumbnailHeight": 141,
+                "thumbnailWidth": 150
+            }
+        },
+        {
+            "kind": "customsearch#result",
+            "title": "5 Common Grammar Mistakes to Avoid in Business Writing - The ...",
+            "htmlTitle": "5 Common Grammar Mistakes to Avoid in Business Writing - The ...",
+            "link": "http://www.shutterstock.com/blog/wp-content/uploads/sites/5/2015/05/Grammar-Revised-750x422.jpg",
+            "displayLink": "www.shutterstock.com",
+            "snippet": "Grammar-2",
+            "htmlSnippet": "Grammar-2",
+            "mime": "image/jpeg",
+            "image": {
+                "contextLink": "http://www.shutterstock.com/blog/5-common-grammar-mistakes-to-avoid-in-business-writing",
+                "height": 422,
+                "width": 750,
+                "byteSize": 16906,
+                "thumbnailLink": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTc5hKQeZxvcYnYupF1oqchw8oJIKeBUxgghwEkJ9XRXOVTkeC2Zwv0k1Y",
+                "thumbnailHeight": 79,
+                "thumbnailWidth": 141
+            }
+        },
+        {
+            "kind": "customsearch#result",
+            "title": "How Ad Agency Life Has Changed from the Golden Age to the Digital ...",
+            "htmlTitle": "How Ad Agency Life Has Changed from the Golden Age to the Digital ...",
+            "link": "http://www.shutterstock.com/blog/wp-content/uploads/sites/5/2016/07/mad-men-design-header.jpg",
+            "displayLink": "www.shutterstock.com",
+            "snippet": "How Ad Agency Life Has Changed ...",
+            "htmlSnippet": "How Ad Agency Life Has Changed ...",
+            "mime": "image/jpeg",
+            "image": {
+                "contextLink": "http://www.shutterstock.com/blog/ad-agency-life-changed-golden-age-digital-age",
+                "height": 580,
+                "width": 1024,
+                "byteSize": 230284,
+                "thumbnailLink": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRXZQfFWfn9DkkM87iJHg8V-wul8G2xR8FTAUPaP8v8r2yC0NVysFUq8gY",
+                "thumbnailHeight": 85,
+                "thumbnailWidth": 150
+            }
+        },
+        {
+            "kind": "customsearch#result",
+            "title": "5 Common Grammar Mistakes to Avoid in Business Writing - The ...",
+            "htmlTitle": "5 Common Grammar Mistakes to Avoid in Business Writing - The ...",
+            "link": "http://www.shutterstock.com/blog/wp-content/uploads/sites/5/2015/05/Grammar-3-01-copy-750x422.jpg",
+            "displayLink": "www.shutterstock.com",
+            "snippet": "Grammar Tip",
+            "htmlSnippet": "Grammar Tip",
+            "mime": "image/jpeg",
+            "image": {
+                "contextLink": "http://www.shutterstock.com/blog/5-common-grammar-mistakes-to-avoid-in-business-writing",
+                "height": 422,
+                "width": 750,
+                "byteSize": 21948,
+                "thumbnailLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2w45vdq2O4dPbGTO2DKD19Ymf3mD92DVohFNkvQ9evFojTiVkLz8Lnf1s",
+                "thumbnailHeight": 79,
+                "thumbnailWidth": 141
+            }
+        },
+        {
+            "kind": "customsearch#result",
+            "title": "How Ad Agency Life Has Changed from the Golden Age to the Digital ...",
+            "htmlTitle": "How Ad Agency Life Has Changed from the Golden Age to the Digital ...",
+            "link": "http://www.shutterstock.com/blog/wp-content/uploads/sites/5/2016/07/mad-men-design-5.jpg",
+            "displayLink": "www.shutterstock.com",
+            "snippet": "mad-men-design-5. “",
+            "htmlSnippet": "mad-men-design-5. “",
+            "mime": "image/jpeg",
+            "image": {
+                "contextLink": "http://www.shutterstock.com/blog/ad-agency-life-changed-golden-age-digital-age",
+                "height": 2711,
+                "width": 2880,
+                "byteSize": 1445096,
+                "thumbnailLink": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTajEOw2NcTuLVfWp4r83Ury9ziuRygmAelXBn4yzEtqwMuL9KeCrglzE4-",
+                "thumbnailHeight": 141,
+                "thumbnailWidth": 150
+            }
+        },
+        {
+            "kind": "customsearch#result",
+            "title": "How Ad Agency Life Has Changed from the Golden Age to the Digital ...",
+            "htmlTitle": "How Ad Agency Life Has Changed from the Golden Age to the Digital ...",
+            "link": "http://www.shutterstock.com/blog/wp-content/uploads/sites/5/2016/07/mad-men-design-4-1.jpg",
+            "displayLink": "www.shutterstock.com",
+            "snippet": "The Ad Biz, Then and Now",
+            "htmlSnippet": "The Ad Biz, Then and Now",
+            "mime": "image/jpeg",
+            "image": {
+                "contextLink": "http://www.shutterstock.com/blog/ad-agency-life-changed-golden-age-digital-age",
+                "height": 2711,
+                "width": 2880,
+                "byteSize": 1516045,
+                "thumbnailLink": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTkEnqkKTdBoaEZQF0wPVOvzJmaS1DpDErp67wZUpR-9GQ37Vmk4MIhpzfp",
+                "thumbnailHeight": 141,
+                "thumbnailWidth": 150
+            }
+        },
+        {
+            "kind": "customsearch#result",
+            "title": "Shutterstock Career Opportunities",
+            "htmlTitle": "Shutterstock Career Opportunities",
+            "link": "http://www.shutterstock.com/jobs/listings/assets/images/shutterstock_social.jpg",
+            "displayLink": "www.shutterstock.com",
+            "snippet": "Shutterstock Career ...",
+            "htmlSnippet": "Shutterstock Career ...",
+            "mime": "image/jpeg",
+            "image": {
+                "contextLink": "http://www.shutterstock.com/jobs/listings?gh_jid=216912",
+                "height": 843,
+                "width": 1280,
+                "byteSize": 1107031,
+                "thumbnailLink": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTtlWZSUDHyTL6FuZNlaZjuDrzsUYvz4WwuezMKZ4Rbcumbb9ufbsesXR8",
+                "thumbnailHeight": 99,
+                "thumbnailWidth": 150
+            }
+        },
+        {
+            "kind": "customsearch#result",
+            "title": "5 Common Grammar Mistakes to Avoid in Business Writing - The ...",
+            "htmlTitle": "5 Common Grammar Mistakes to Avoid in Business Writing - The ...",
+            "link": "http://www.shutterstock.com/blog/wp-content/uploads/sites/5/2015/05/Grammar-1-01-copy-750x422.jpg",
+            "displayLink": "www.shutterstock.com",
+            "snippet": "Grammar Tip. “",
+            "htmlSnippet": "Grammar Tip. “",
+            "mime": "image/jpeg",
+            "image": {
+                "contextLink": "http://www.shutterstock.com/blog/5-common-grammar-mistakes-to-avoid-in-business-writing",
+                "height": 422,
+                "width": 750,
+                "byteSize": 12962,
+                "thumbnailLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4ovFXc56YObqfu7DNJPJjvgekpo17QVazQTfrH018RbrG39Flr64ZjcpF",
+                "thumbnailHeight": 79,
+                "thumbnailWidth": 141
+            }
+        }
+    ]};
     var _requestUri = "";
     var _paramString = "";
     var _params = {
         q: "",
-        searchType: "",
-        number: "",
-        start: ""
+        searchType: ""
     };
     var _options = {
         query: "",
@@ -101,8 +220,8 @@ GoogleSearchEngine = function(cx, apiKey){
     var getParamString = function(){
         _params["q"] = _options.query;
         _params["searchType"] = _options.searchType;
-        _params["number"] = _options.number || 10;
-        _params["start"] = _options.start || 0;
+        // _params["number"] = _options.number || 10;
+        // _params["start"] = _options.start || 0;
         for(var p in _params){
             if ( typeof(_params[p]) === "string" ) {
                 if ( _paramString ) {
