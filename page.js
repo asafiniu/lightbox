@@ -16,7 +16,7 @@
     var _number = 10;
 
     var getImages = function(cbk){
-        var goog = new GoogleSearchEngine('006788635243508668146:f0e7orztwgs', 'AIzaSyAaZ4dqB21xxTtdB94ZLxZoI4_Xw5GzUnE');
+        var goog = new GoogleSearchEngine("006788635243508668146:f0e7orztwgs", "AIzaSyAaZ4dqB21xxTtdB94ZLxZoI4_Xw5GzUnE");
         goog.query({
             query: "slack",
             searchType: "image",
@@ -48,45 +48,38 @@
         }, 10);
     };
 
-    var showThumbnails = function(thumbnails){
-        var slider = document.getElementById("images");
-        for (var i = thumbnails.length - 1; i >= 0; i--) {
-            var frame = document.createElement("div");
-            var thumb = document.createElement("img");
-            frame.className = "thumbnail-frame";
-            // TODO generalize image interface. These lines are too "familiar" with Google
-            thumb.alt = thumbnails[i].title;
-            thumb.src = thumbnails[i].image.thumbnailLink;
-            thumb.setAttribute('original-src', thumbnails[i].link);
-            thumb.setAttribute('original-w', thumbnails[i].image.width);
-            thumb.setAttribute('original-h', thumbnails[i].image.height);
-            preloadImage(thumbnails[i].link);
-            frame.appendChild(thumb);
-            frame.onclick = function(e){
-                var img = this.getElementsByTagName('img')[0];
-                ImagePreview.open({
-                    title:img.alt,
-                    src:img.getAttribute('original-src'),
-                    width:img.getAttribute('original-w'),
-                    height:img.getAttribute('original-h'),
-                    thumbnail:this,
-                    cssClass:"image-preview",
-                    beforeOpen:function(modal){
-                        console.log("about to open.");
-                    },
-                    afterOpen:function(modal){
-                        console.log("open.");
-                    },
-                    beforeClose:function(modal){
-                        console.log("about to close.");
-                    },
-                    afterClose:function(modal){
-                        console.log("closed.");
-                    }
-                });
+    var getThumbnail = function(tn) {
+        var thumb = document.createElement("div");
+        thumb.className = "thumbnail-frame";
+        var span = document.createElement("span");
+        thumb.appendChild(span);
+        var img = document.createElement("img");
+        img.alt = tn.title;
+        img.src = tn.src_thumb;
+        img.setAttribute("data-src", tn.src);
+        img.setAttribute("data-width", tn.width);
+        img.setAttribute("data-height", tn.height);
+        thumb.appendChild(img);
+        thumb.onclick = function(e){
+            e.stopPropagation();
+            var img = this.getElementsByTagName("img")[0];
+            var atts = {
+                src: "data-src",
+                width: "data-width",
+                height: "data-height"
             };
-            slider.appendChild(frame);
-        }
+            ImagePreview.open({
+                attributes: atts,
+                title:img.alt,
+                src:img.getAttribute(atts.src),
+                width:img.getAttribute(atts.width),
+                height:img.getAttribute(atts.height),
+                thumbnail:this,
+                cssClass:"image-preview"
+            });
+        };
+
+        return thumb;
     };
 
     var loadImages = function(){
@@ -94,7 +87,11 @@
         gallery.className = "loading";
         getImages(function(images){
             if ( images && images.length ) {
-                showThumbnails(images);
+                for (var i = images.length - 1; i >= 0; i--) {
+                    preloadImage(images[i].src_thumb);
+                    preloadImage(images[i].src);
+                    gallery.appendChild(getThumbnail(images[i]));
+                }
             }
             else {
                 gallery.className = "empty";

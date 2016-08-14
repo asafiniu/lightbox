@@ -236,12 +236,12 @@ GoogleSearchEngine = function(cx, apiKey){
     };
 
     var init = function(cseId, apiId){
-        // C'tor
+        // C"tor
         if (!cx) {
-            throw "Invalid parameter 'cx': " + cx;
+            throw "Invalid parameter \"cx\": " + cx;
         }
         else if (!apiKey) {
-            throw "Invalid parameter 'apiKey': " + apiKey;
+            throw "Invalid parameter \"apiKey\": " + apiKey;
         }
         else {
             _requestUri = "https://www.googleapis.com/customsearch/v1?cx=" + cx + "&key=" + apiKey + "&";
@@ -252,7 +252,15 @@ GoogleSearchEngine = function(cx, apiKey){
     this.query = function(options){
         _options.extend(options);
         if ( _example ) {
-            return options.callback({data: _example.items, errors: []});
+            return options.callback({data: _example.items.map(function(image){
+                return {
+                    title: image.title,
+                    src_thumb: image.image.thumbnailLink,
+                    src: image.link,
+                    width: image.image.width,
+                    height: image.image.height
+                };
+            }), errors: []});
         }
 
         getGoogle(_requestUri + getParamString(), function(ok, responseText){
@@ -269,6 +277,16 @@ GoogleSearchEngine = function(cx, apiKey){
                 response.data = [];
                 response.errors.push(e);
             }
+
+            response.data = response.data.map(function(image){
+                return {
+                    title: image.title,
+                    src_thumb: image.image.thumbnailLink,
+                    src: image.link,
+                    width: image.image.width,
+                    height: image.image.height
+                };
+            });
 
             if (typeof(options.callback) === "function"){
                 options.callback(response);

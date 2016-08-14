@@ -16,7 +16,6 @@ Array.prototype.first = function() {
 Element.prototype.remove = function() {
     this.parentElement.removeChild(this);
 };
-
 Element.prototype.find = function(id) {
     var result = null;
     for (var i = this.children.length - 1; i >= 0 && !result; i--) {

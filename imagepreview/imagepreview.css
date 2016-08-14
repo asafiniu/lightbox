@@ -1,45 +1,94 @@
-a{
-color:#000;
-cursor:pointer;
-text-decoration:none!important;
-}
-div.modal-wrapper{
+div.modal-wrapper {
 position:absolute;
-background:rgba(0,0,0,0.8);
-top:0;
-width:100%;
-left:0;
-min-height:100%;
+left:0; top:0;
+height:100%; width:100%;
+background:rgba(0,0,0,.7)
 }
-div.modal-wrapper div.modal-content{
-margin:5% auto 10%;
-height:100%;
-background:#fff;
-width:80%
-}
-div.modal-wrapper div.modal-content div#footer div#prevNext a{visibility:hidden}
-div.modal-wrapper div.modal-content.hasPrev div#footer div#prevNext a#prev,
-div.modal-wrapper div.modal-content.hasNext div#footer div#prevNext a#next{visibility:visible}
-div.modal-wrapper div.modal-content div#header{
-text-align:right;
-padding:15px 20px
-}
-div.modal-wrapper div.modal-content div#header a#close{
+div.modal-wrapper div.modal-content.hasprev div#body:hover div#prevnext a#prev,
+div.modal-wrapper div.modal-content.hasnext div#body:hover div#prevnext a#next { visibility:visible }
+div.modal-wrapper div.modal-content {
 position:relative;
-right:10px;
+top:50%;
+height:75%; width:75%;
+padding:5px 0 35px; margin:2% auto; margin:0 auto;
+background:#000;
+transform:translateY(-50%);
 }
-div.modal-wrapper div.modal-content div#header div#title{text-align:center}
-div.modal-wrapper div.modal-content hr{
-width:80%;
+div.modal-wrapper div.modal-content div#body div.image-holder {
+height:100%; width:100%;
+margin:0 auto;
 text-align:center;
+overflow:hidden
 }
-div.modal-wrapper div.modal-content div#body{text-align:center}
-div.modal-wrapper div.modal-content div#body img#modalimage{
-max-height:75%;
-max-width:90%;
+div.modal-wrapper div.modal-content div#body div.image-holder span {
+display:inline-block;
+height:100%;
+vertical-align:middle
 }
-div.modal-wrapper div.modal-content div#footer{
-text-align:center;
-margin:10px 0 30px
+div.modal-wrapper div.modal-content div#body div.image-holder img {
+max-height:100%; max-width:100%; height:auto; width:auto;
+vertical-align:middle
 }
-div.modal-wrapper div.modal-content div#footer div#prevnext a{margin-right:10px}
+div.modal-wrapper div.modal-content div#body div#prevnext {
+position:absolute;
+top:50%;
+width:100%
+}
+div.modal-wrapper div.modal-content div#body div#prevnext a#prev { float:left }
+div.modal-wrapper div.modal-content div#body div#prevnext a#next { float:right }
+div.modal-wrapper div.modal-content div#body div#prevnext a {
+padding:10px 15px; margin:0 25px;
+border-radius:50%;
+background:#fff;
+visibility:hidden;
+opacity:0.6;
+}
+div.modal-wrapper div.modal-content div#body div#prevnext a:hover { opacity:1 }
+div.modal-wrapper div.modal-content div#header div#title {
+width:100%;
+text-align:center
+}
+div.modal-wrapper div.modal-content div#header a#newtab {
+margin:10px 0 0 15px;
+font-size:10px;
+float:left;
+top:0
+}
+div.modal-wrapper div.modal-content div#header a#newtab:hover { color:#fff }
+div.modal-wrapper div.modal-content div#header a#close {
+margin:0 10px 0 0;
+float:right;
+top:11px
+}
+div.modal-wrapper div.modal-content div#header a {
+position:relative;
+z-index:1
+}
+div.modal-wrapper a#close span.close-bg {
+padding:3px 7px;
+text-transform:lowercase;
+border-radius:20px;
+background:#333;
+}
+div.modal-wrapper h1 {
+position:absolute;
+bottom:-3px;
+width:100%;
+padding:15px 0; margin:0;
+color:#555459;
+font-size:.9em;
+background:#fff;
+cursor:default;
+}
+div.modal-wrapper a#close:hover span.close-bg,
+div.modal-wrapper a#close span.close-bg:hover {
+color:#fff;
+background:#333
+}
+div.modal-wrapper a {
+color:#555459;
+text-decoration:none!important;
+outline:0!important;
+cursor:pointer;
+}
+div.modal-wrapper a:hover { text-decoration:underline }
