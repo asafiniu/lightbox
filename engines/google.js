@@ -1,4 +1,5 @@
 GoogleSearchEngine = function(cx, apiKey){
+    //
     // Search through Google using a Custom Search Engine and an API key
 
     var _example = {
@@ -196,16 +197,8 @@ GoogleSearchEngine = function(cx, apiKey){
     ]};
     var _requestUri = "";
     var _paramString = "";
-    var _params = {
-        q: "",
-        searchType: ""
-    };
-    var _options = {
-        query: "",
-        searchType: "images"
-    };
-
-    // Private functions
+    var _params = { q: "", searchType: "" };
+    var _options = { query: "", searchType: "images" };
     var getGoogle = function(url, callback){
         var searchRequest = new XMLHttpRequest();
         searchRequest.onreadystatechange = function (e) {
@@ -220,8 +213,6 @@ GoogleSearchEngine = function(cx, apiKey){
     var getParamString = function(){
         _params["q"] = _options.query;
         _params["searchType"] = _options.searchType;
-        // _params["number"] = _options.number || 10;
-        // _params["start"] = _options.start || 0;
         for(var p in _params){
             if ( typeof(_params[p]) === "string" ) {
                 if ( _paramString ) {
@@ -236,7 +227,6 @@ GoogleSearchEngine = function(cx, apiKey){
     };
 
     var init = function(cseId, apiId){
-        // C"tor
         if (!cx) {
             throw "Invalid parameter \"cx\": " + cx;
         }
@@ -248,7 +238,6 @@ GoogleSearchEngine = function(cx, apiKey){
         }
     };
 
-    // Public methods
     this.query = function(options){
         _options.extend(options);
         if ( _example ) {
@@ -294,5 +283,5 @@ GoogleSearchEngine = function(cx, apiKey){
         });
     };
 
-    init(cx, apiKey); // initialize
+    init(cx, apiKey);
 };

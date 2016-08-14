@@ -101,7 +101,6 @@
         });
     };
 
-    // Window events
     window.onload = function(e){
         loadImages();
     };
