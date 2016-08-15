@@ -1,5 +1,4 @@
-*********************************************************************************************************************************************************               Lightbox - a simple image search engine               ****************************
-*****************************************************************************************************************************
+Asaf's Lightbox - a simple image search engine and viewer
 
 Pull images from Google's Customer search API and display them on a lightbox (modal).
 In this demo - I used a predefined search engine to pull images from http://www.shutterstock.com (via Google's image search) with the query "slack".
